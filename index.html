@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mimi ile Oyun Öğren</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(#fff0f8, #e5f8ff);
+      min-height: 100vh;
+      color: #69417c;
+    }
+    main {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 24px;
+    }
+    h1 { color: #d64b9d; }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px #e7c8e4;
+    }
+    button {
+      background: #ff87c2;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>🐰 Mimi ile Oyun Öğren 🌈</h1>
+    <div class="card">
+      <h2>Harflerin Sihirli Dünyasına Hoş Geldin!</h2>
+      <p>Mimi ile harfleri öğrenmeye hazır mısın?</p>
+      <button onclick="oyna()">⭐ Oyuna Başla</button>
+      <p id="mesaj"></p>
+    </div>
+  </main>
+  <script>
+    function oyna() {
+      document.getElementById("mesaj").textContent =
+        "🎉 Harika! İlk harfimiz: a";
+    }
+  </script>
+</body>
+</html>
