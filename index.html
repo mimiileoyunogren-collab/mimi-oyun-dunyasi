@@ -335,4 +335,40 @@ window.mimiRewardsUpdate=update;
 window.mimiRewardShow=show;
 update();
 })();
-</script></body></html>
+</script>
+<!-- Mimi v24: Görsel ana menü bağlantıları için bağımsız, güvenli yönlendirme -->
+<style>
+  #games,#syllable-workshop,#workshop,#garden,#reading-room,#mimi-about {scroll-margin-top:24px;}
+  .picture-home .hotspot:focus-visible {outline:4px solid #ff4d9a;outline-offset:-3px;}
+</style>
+<script>
+(function () {
+  'use strict';
+  var home = document.getElementById('home');
+  if (!home) return;
+  var navButtons = Array.from(home.querySelectorAll('.hotspot')).filter(function(button) {
+    return parseFloat(button.style.top) < 10;
+  });
+  var destinations = [
+    'home', 'games', 'syllable-workshop', 'workshop',
+    'garden', 'games', 'mimi-about'
+  ];
+  var footer = document.querySelector('footer.footer');
+  if (footer && !footer.id) footer.id = 'mimi-about';
+  navButtons.forEach(function(button, index) {
+    var targetId = destinations[index];
+    if (!targetId) return;
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      var target = document.getElementById(targetId);
+      if (target) target.scrollIntoView({behavior:'smooth',block:'start'});
+      if (index === 5) {
+        var album = document.querySelector('.mimi-album-btn');
+        if (album) setTimeout(function(){ album.click(); }, 300);
+      }
+    }, true);
+  });
+})();
+</script>
+</body></html>
